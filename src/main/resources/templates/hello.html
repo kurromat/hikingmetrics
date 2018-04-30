@@ -11,14 +11,17 @@
     <!--/*@thymesVar id="person" type="com.kurromat.hikingmetrics.model.Person"*/-->
     <form action="#" th:action="@{/doGreet}" th:object="${person}" method="post">
         <div class="row">
-            <div class="col-xs-3"><label for="name">Whom to greet?</label></div>
-            <div class="col-xs-5">
-                <input id="name" type="text" th:field="${person.name}"/>
+            <div class="col-sm-3 col-xs-12"><label for="name">Whom to greet?</label></div>
+            <div class="col-sm-5 col-xs-12">
+                <input id="name" type="text" : th:field="${person.name}"/>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-push-3 col-xs-5">
+            <div class="col-sm-offset-3 col-sm-1 col-xs-12">
                 <input type="submit" value="Submit"/>
+            </div>
+            <div class="col-sm-1 col-xs-12">
+                <input type="reset" value="Reset"/>
             </div>
         </div>
     </form>
