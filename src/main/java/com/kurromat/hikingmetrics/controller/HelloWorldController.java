@@ -20,12 +20,12 @@ public class HelloWorldController {
 		this.helloWorldService = helloWorldService;
 	}
 
-	@RequestMapping("/hello")
+	@RequestMapping("/")
 	public ModelAndView helloRoot() {
 		return new ModelAndView("index").addObject("person", new Person());
 	}
 
-	@RequestMapping(value = "/hello/doGreet", method = POST)
+	@RequestMapping(value = "/doGreet", method = POST)
 	public ModelAndView doGreet(@ModelAttribute Person person) {
 		helloWorldService.registerGreeting(person.getName());
 		return new ModelAndView("doGreet").addObject("person", helloWorldService.getPerson(person.getName()));

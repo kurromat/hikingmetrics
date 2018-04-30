@@ -27,13 +27,13 @@ public class HelloWorldControllerTest {
 
 	@Test
 	public void helloWorldRegistersWorld() {
-		controller.doGreet(new Person(WORLD, 0));
+		controller.doGreet(new Person(WORLD));
 		verify(service, times(1)).registerGreeting(WORLD);
 	}
 
 	@Test
 	public void helloWorldRegistersRecipientAndChecksCount() {
-		controller.doGreet(new Person(JOE, 0));
+		controller.doGreet(new Person(JOE));
 		verify(service, times(1)).registerGreeting(JOE);
 		verify(service, times(1)).getPerson(JOE);
 	}

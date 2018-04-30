@@ -1,5 +1,6 @@
 package com.kurromat.hikingmetrics.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -11,12 +12,12 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Person {
 
 	@NonNull
 	@Id
 	private String name;
-	@NonNull
 	private int count;
 }

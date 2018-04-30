@@ -17,7 +17,7 @@ public class HelloWorldService {
 	}
 
 	public void registerGreeting(String recipient) {
-		Person person = greetingRegistry.findByName(recipient).orElse(new Person(recipient, 0));
+		Person person = greetingRegistry.findByName(recipient).orElse(new Person(recipient));
 		person.setCount(person.getCount() + 1);
 		greetingRegistry.save(person);
 	}
