@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<p th:text="'Hello ' + ${person.name}"/>
+<p th:text="'You have been greeted ' + ${person.count} + ' times.'"/>
+
+<th:block th:include="hello.html"></th:block>
+
+</body>
+</html>

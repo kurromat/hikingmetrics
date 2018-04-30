@@ -4,8 +4,12 @@
 
 <body>
 
-<p th:text="'hello ' + ${recipient}">Welcome to our grocery store!</p>
-
+<p>Hello there</p>
+<p>Who wants to be greeted</p>
+<form action="#" th:action="@{/hello/doGreet}" th:object="${person}" method="post">
+    <p>Whom to greet: <input type="text" th:field="${person.name}"/></p>
+    <p><input type="button" value="Submit"/></p>
+</form>
 </body>
 
 </html>
