@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:include="header">
+<head th:include="fragments/header">
 </head>
 <body>
 <div class="container">
@@ -23,11 +23,11 @@
         </div>
         <div class="row">
             <div class="col form-actions">
-                <button type="submit">Log in</button>
+                <button class="btn" type="submit">Log in</button>
             </div>
         </div>
     </form>
 </div>
-<div th:include="footer"></div>
+<div th:include="fragments/footer"></div>
 </body>
 </html>

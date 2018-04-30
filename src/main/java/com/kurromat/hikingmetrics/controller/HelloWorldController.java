@@ -1,6 +1,7 @@
 package com.kurromat.hikingmetrics.controller;
 
 import com.kurromat.hikingmetrics.model.Person;
+import com.kurromat.hikingmetrics.services.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,5 +30,10 @@ public class HelloWorldController {
 	public ModelAndView doGreet(@ModelAttribute Person person) {
 		helloWorldService.registerGreeting(person.getName());
 		return new ModelAndView("doGreet").addObject("person", helloWorldService.getPerson(person.getName()));
+	}
+
+	@RequestMapping(value = "/overview")
+	public ModelAndView overview() {
+		return new ModelAndView("overview").addObject("greetings", helloWorldService.calculateAllGreetings());
 	}
 }
