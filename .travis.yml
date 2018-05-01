@@ -1,15 +1,16 @@
-language: java 
-sudo: false 
-install: true 
+language: java
+sudo: false
+install: true
 addons:
-   sonarcloud:
-      organization: "kurromat-github" 
-      token: "5e62dd38d6049fa5a3276ff905bce2a18e0f1852" 
+  sonarcloud:
+    organization: kurromat-github
+    token:
+      secure: Iq5VVWFBmFEMPorGKl1V5JOL0bLlYEzITfDkszjxo3AY54GMgQ5Hjmy1tClDzVNGMSnjDb+aO36FDDCJsFK0CVvW98Y+MVlWbNIg8DZYHsj7uSQe+kA9UFcA0S2wgZMzwVMFBrDvxlYIgw786maJA4M0hfCd/4t1FgVbUnYt8E0/pwZS4wYGJ9r7jAwmHcVoat90RodUEW7l8uPx3tmbZajj5+PQ5o7qh5dXoFkm5bSiuifNuVxWk8a5PWGN4lj0S2GEM1S32ZupkeE1F6nCePv8gX4z2qHO1cOhXd7pDCCcMGkyE2cAWi+LxQPCVK7ubhjI/0uxpe8mlDkRvDVgnj8pgrzqDiYcO0XnF0oc36TeRK9Kuee8/sh+hgub/SedKT0gJs+xVOLq7npwzosKD+QzH4OuELZOCnTPsomhI8XdhlI5SRZrgPK7/VAIC2pGn+uq1HiNCrlT72igKuYFUTT7fzCPHDMWvz1Oeze/yrWJf6JhZFnfyIRonL0Xl4l5T+OJKK93rskW92YhPGx/wnbr5X3TuZcMBAcB3N95Flfo3UnCQd6lUaDcgIiG0gTbkhS1lmlYmVH9TbDL7Ya1xa58JDjro6Dpk0TCJOwD5XlF78i9kZUTwh6QxHEWbBD27vVbXIHUqE5P3wLKts8VWV49/BVzR/HY9oSG81OUGfI=
 jdk:
-   - oraclejdk8 
+- oraclejdk8
 script:
-   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar 
-cache: 
-   directories: 
-      - '$HOME/.m2/repository' 
-      - '$HOME/.sonar/cache' 
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+cache:
+  directories:
+  - "$HOME/.m2/repository"
+  - "$HOME/.sonar/cache"

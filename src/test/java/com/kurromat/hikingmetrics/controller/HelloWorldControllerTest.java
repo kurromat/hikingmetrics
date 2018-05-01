@@ -1,6 +1,7 @@
 package com.kurromat.hikingmetrics.controller;
 
 import com.kurromat.hikingmetrics.model.Person;
+import com.kurromat.hikingmetrics.services.HelloWorldService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,5 +37,11 @@ public class HelloWorldControllerTest {
 		controller.doGreet(new Person(JOE));
 		verify(service, times(1)).registerGreeting(JOE);
 		verify(service, times(1)).getPerson(JOE);
+	}
+
+	@Test
+	public void overviewFetchesAllGreetings() {
+		controller.overview();
+		verify(service, times(1)).calculateAllGreetings();
 	}
 }

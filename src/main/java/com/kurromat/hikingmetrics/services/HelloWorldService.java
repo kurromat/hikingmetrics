@@ -1,9 +1,13 @@
-package com.kurromat.hikingmetrics.controller;
+package com.kurromat.hikingmetrics.services;
 
 import com.kurromat.hikingmetrics.model.Person;
 import com.kurromat.hikingmetrics.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
+
+import static java.util.stream.Collectors.toMap;
 
 @Service
 public class HelloWorldService {
@@ -24,5 +28,9 @@ public class HelloWorldService {
 
 	public Person getPerson(String recipient) {
 		return greetingRegistry.findByName(recipient).orElseThrow(() -> new RuntimeException("recipient " + recipient + " not found"));
+	}
+
+	public Map<String, Integer> calculateAllGreetings() {
+		return greetingRegistry.findAll().stream().collect(toMap(Person::getName, Person::getCount));
 	}
 }
