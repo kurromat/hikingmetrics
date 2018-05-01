@@ -1,8 +1,15 @@
-language: java
-deploy:
-  provider: heroku
-  api_key:
-    secure: oCO4Pfwd8HXw49bptf+ivmaUauVjFfUz0kUXOVZ14uDk/WxNI9rm5Rpz873UElJKOZiMz2ocHWTRu7BoUAewedRR+7YtBUb6zZZvR0T3mA0BGeP14FKH72dF85OVnWBoObgT65ZToFgmmPShH5l9EDxPSrmkdkON6IEX1Ji7oVQQ9DpSGjTXzKDbuGwmH0gmZrpzJtl1hJW+weAOt5XT1iUDox2uhtcu74pgNrroY5Y3jW2zFK+jQIYpTBE/yTf3HbbXS2qTusC0JlpQeahG7fuj+MbJ4fRIhDLANkuzvdJMdnVKeK/h2ysmTqGLNxncQ2LqjRDFoQAGxhv1Db1hkZ0d5jEOdoNrneYkH1A1KEpGFQlMw4wDMqLwdBdLbJzTH30PbkvLydl55ZYrbwKDKoL8f3sY+2OFO2t3o9JQBVKBO1aq+xJMuYEa66ngJQ0dcL2J7TlYxWePtDqpdqyAi0Pk5M3z9w+uqEet4/AsLyfqkLNmA397Wx5GtSXsTI/EH5HDkz67rz+9yeaOnXyhDSYrRJqU6xKwZdPiM7nwYKXj6Nlkz1aq6qdc13zO1Bl4Yj3XZlDz2nTo/WTmILIIoPXvkjunHekHcDaY/CKEyFOLcQ71/ZVp3NP5daNXN/BYOP6Sl580JUrI/37mWfWKTfEL1+bcg4GGx2IEwTLNOTY=
-  app: hikingmetrics-staging
-  on:
-    repo: kurromat/hikingmetrics
+language: java 
+sudo: false 
+install: true 
+addons:
+   sonarcloud:
+      organization: "kurromat-github" 
+      token: "5e62dd38d6049fa5a3276ff905bce2a18e0f1852" 
+jdk:
+   - oraclejdk8 
+script:
+   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar 
+cache: 
+   directories: 
+      - '$HOME/.m2/repository' 
+      - '$HOME/.sonar/cache' 
