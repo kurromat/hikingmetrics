@@ -4,8 +4,7 @@ install: true
 addons:
    sonarcloud:
       organization: "kurromat-github" 
-      token: 
-         secure: "5e62dd38d6049fa5a3276ff905bce2a18e0f1852" 
+      token: "5e62dd38d6049fa5a3276ff905bce2a18e0f1852" 
 jdk:
    - oraclejdk8 
 script:
